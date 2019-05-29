@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		home
+		hello world
 	</div>	
 </template>
 
@@ -11,7 +11,5 @@
 </script>
 
 <style scoped>
-.home{
-	font-size: 30px
-}
+
 </style>
