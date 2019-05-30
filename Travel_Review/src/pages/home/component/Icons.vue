@@ -6,7 +6,7 @@
                 class="icon">
                     <div class="icon-img">
                         <img class="icon-img-content"
-                        :src="item.ImgUrl" />
+                        :src="item.imgUrl" />
                     </div>
                     <p class="icon-desc">{{item.desc}}</p>       
                 </div>
@@ -18,46 +18,14 @@
 <script>
 export default {
     name:"HomeIcons",
+    props:{
+        iconList:Array
+    },
     data(){
         return {
-            swiperOption:{},
-            iconList:[{
-                id:"001",
-                ImgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-                desc:"景点名票"
-            },{
-                id:"002",
-                ImgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-                desc:"一日游"
-            },{
-                id:"003",
-                ImgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-                desc:"一日游"
-            },{
-                id:"004",
-                ImgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-                desc:"一日游"
-            },{
-                id:"005",
-                ImgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-                desc:"一日游"
-            },{
-                id:"006",
-                ImgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-                desc:"一日游"
-            },{
-                id:"007",
-                ImgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-                desc:"一日游"
-            },{
-                id:"008",
-                ImgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-                desc:"一日游"
-            },{
-                id:"009",
-                ImgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-                desc:"一日游"
-            }]
+            swiperOption:{
+                autoplay:false
+            },
         }
     },
     computed:{

@@ -19,36 +19,14 @@
 <script>
 export default {
     name:"HomeRecommend",
+    props:{
+        recommendList:{
+            type:Array
+        }
+    },
     data(){
         return {
-            recommendList:[
-                {
-                   id:"001",
-                   imgUrl:"http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg",
-                   title:"银杏湖乐园" ,
-                   desc:"让小朋友能够体验互动的快乐"
-                },{
-                   id:"002",
-                   imgUrl:"http://img1.qunarzz.com/sight/p0/1411/bb/538133c76765880a3d3c802e45015c57.water.jpg_200x200_169b048c.jpg",
-                   title:"银杏湖乐园" ,
-                   desc:"让小朋友能够体验互动的快乐"
-                },{
-                   id:"003",
-                   imgUrl:"http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg",
-                   title:"银杏湖乐园" ,
-                   desc:"让小朋友能够体验互动的快乐"
-                },{
-                   id:"004",
-                   imgUrl:"http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg",
-                   title:"银杏湖乐园" ,
-                   desc:"让小朋友能够体验互动的快乐"
-                },{
-                   id:"005",
-                   imgUrl:"http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg",
-                   title:"银杏湖乐园" ,
-                   desc:"让小朋友能够体验互动的快乐"
-                }
-            ]
+            
         }
     }
 }
