@@ -2,30 +2,32 @@
     <div>
         <div class="banner" @click="handleBannerClick">
             <img class="banner-img"
-            src="https://img1.qunarzz.com/sight/p0/1601/d4/d4f1a62140b9d93590.img.jpg_600x330_16d61609.jpg" 
+            :src="bannerImg" 
             >
             <div class="banner-info">
-                <div class="banner-title">牛首山文化旅游区(AAAA景区)</div>
+                <div class="banner-title">{{sightName}}</div>
                 <div class="banner-number">
                     <span class="iconfont">&#xe674;</span>
-                    15</div>
+                    {{this.gallaryImgs.length}}</div>
             </div>
         </div>
-        <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
+        <common-gallary :imgs="gallaryImgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
     </div>
 </template>
 
 
 <script>
 import CommonGallary from 'common/gallary/Gallary'
+
 export default {
     name:"DetailBanner",
+    props:{
+        sightName:String,
+        bannerImg:String,
+        gallaryImgs:Array
+    },
     data(){
         return {
-            imgs:[
-                    "http://img1.qunarzz.com/sight/p0/1601/88/887e26529b26a8c390.img.jpg_350x240_6c1a80d9.jpg",
-                    "http://img1.qunarzz.com/sight/p0/1601/5e/5e76615cab0005f490.img.jpg_r_800x800_c3b473fe.jpg"
-                ],
             showGallary:false
         }
     },

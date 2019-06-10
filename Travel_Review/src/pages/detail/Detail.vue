@@ -1,9 +1,9 @@
 <template>
     <div class="detail">
-        <detail-banner></detail-banner>
-        <detail-header></detail-header>
+        <detail-banner :sightName="sightName" :bannerImg="bannerImg" :gallaryImgs="gallaryImgs"></detail-banner>
+        <detail-header ></detail-header>
         <div class="content">
-            <detail-list :list="list"></detail-list>
+            <detail-list :list="categoryList"></detail-list>
         </div>
     </div>
 </template>
@@ -13,6 +13,7 @@
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
+import axios from 'axios'
 
 export default {
     name:"Detail",
@@ -23,23 +24,33 @@ export default {
     },
     data(){
         return {
-            list:[{
-                "title": "成人票" ,
-                "children": [{
-                "title": "成人三馆联票",
-                "children": [{
-                    "title": "成人三馆联票 - 某一连锁店销售"
-                }]
-                },{
-                "title": "成人五馆联票"
-                }]
-            }, {
-                "title": "学生票"
-            }, {
-                "title": "儿童票"
-            }, {
-                "title": "特惠票"
-            }]
+            sightName:"",
+            bannerImg:"",
+            gallaryImgs:[],
+            categoryList:[]
+        }
+    },
+    mounted(){
+        this.getDetailInfo();
+    },
+    methods:{
+        getDetailInfo(){
+            axios.get('/api/detail.json',{
+                params:{
+                    id:this.$route.params.id
+                }
+            })
+            .then(this.getDetailInfoSucc)
+        },
+        getDetailInfoSucc(response){
+            response=response.data;
+            if(response.ret && response.data){
+                response=response.data
+                this.sightName=response.sightName
+                this.bannerImg=response.bannerImg
+                this.gallaryImgs=response.gallaryImgs
+                this.categoryList=response.categoryList
+            }
         }
     }
 }
